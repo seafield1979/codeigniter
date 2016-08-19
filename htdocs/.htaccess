@@ -1,0 +1,12 @@
+
+# Code Igniter用
+# i3_test/index.php/[コントローラ名] だとカッコ悪いので
+# i3_test/[コントローラ名] のようにアクセスできるようにする
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !^(.*)\.(gif|png|jpg|jpeg|css|js)$ [NC]
+RewriteRule ci3_test ci3_test/index.php [L]
+
+
+# RewriteEngine on
+# RewriteCond $1 !^(index\.php|images|.+\.css$|.+\.js$|.+\.png$|.+\.jpg$|robots\.txt)
+# RewriteRule ^(.*)$ /index.php/$1 [L]

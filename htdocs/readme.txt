@@ -1,0 +1,1 @@
+このhtdocsは実際の Apacheのhtdocs以下に配置して使用する。
