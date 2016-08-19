@@ -25,15 +25,29 @@ class Model_Test3 extends CI_Controller {
     return array();
   }
 
+  /*
+   MODELクラスのInsert文を実行
+   */
+  public function query_test2()
+  {
+    $this->load->model('TestDBModel', 'testdb', TRUE);
+    $result = $this->testdb->query_insert();
+    return $result;
+  }
+
 
 	public function index()
 	{
 		// モデルからデータを取得する
-    $result = $this->query_test1();
+    //$result = $this->query_test1();
+    $this->query_test2();
     
 		$data['message'] = 'This is model test!!!';
 		$data['title'] = "Test Model 3";
+    if (!isset($result)) {
+      $result = array();
+    }
     $data['result'] = $result;
-		$this->load->view('model_test3_view', $data);
+ 		$this->load->view('model_test3_view', $data);
 	}
 }

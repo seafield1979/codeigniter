@@ -18,5 +18,16 @@ class TestDBModel extends CI_Model
         }
         return FALSE;
     }
+
+    function query_insert()
+    {
+        $name = "shutaro" . rand(0,1000);
+        $birthday = date("Y-m-d h:i:s");
+        $query = $this->db->query("insert into users (name, birthday) values (\"{$name}\",\"{$birthday}\")");
+        if ($query) {
+            return TRUE;
+        }
+        return FALSE;
+    }
 }
 ?>
